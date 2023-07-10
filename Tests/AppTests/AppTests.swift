@@ -13,6 +13,9 @@ final class AppTests: XCTestCase {
         })
     }
 
+    ///THis causes a race condition on postgres 15.1 possibly
+    ///and not in postgres 15.3
+    
       func testGetExistingTodo() async throws {
         let app = Application(.testing)
         do {
